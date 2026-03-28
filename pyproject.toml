@@ -10,8 +10,9 @@ readme = "README.md"
 requires-python = ">=3.11"
 
 dependencies = [
-    "crewai[tools]>=1.0.0,<2.0.0",
+    "crewai[tools,litellm]>=1.0.0,<2.0.0",
     "python-dotenv>=1.0.0",
+    "litellm>=1.0.0",
 ]
 
 [project.scripts]
