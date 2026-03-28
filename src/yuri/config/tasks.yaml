@@ -21,10 +21,7 @@ requirements_analysis_task:
 
 frontend_dev_task:
   description: >
-    根据以下技术规格文档，开发完整的前端代码：
-
-    【技术规格】
-    {tech_spec}
+    根据需求分析任务提供的技术规格文档，开发完整的前端代码。
 
     请完成以下工作：
     1. 创建完整的前端项目结构
@@ -41,10 +38,7 @@ frontend_dev_task:
 
 backend_dev_task:
   description: >
-    根据以下技术规格文档，开发完整的后端服务代码：
-
-    【技术规格】
-    {tech_spec}
+    根据需求分析任务提供的技术规格文档，开发完整的后端服务代码。
 
     请完成以下工作：
     1. 创建完整的后端项目结构（使用 FastAPI）
@@ -62,13 +56,7 @@ backend_dev_task:
 
 integration_task:
   description: >
-    对以下前端代码和后端代码进行接口联调，确保完全对齐：
-
-    【前端代码】
-    {frontend_code}
-
-    【后端代码】
-    {backend_code}
+    对前端开发任务和后端开发任务产出的代码进行接口联调，确保完全对齐。
 
     请完成以下检查和修复：
     1. 检查前端 API 调用 URL 是否与后端路由完全一致
@@ -86,13 +74,7 @@ integration_task:
 
 qa_validation_task:
   description: >
-    对照原始需求，验证最终实现是否完整正确：
-
-    【原始用户需求】
-    {user_requirement}
-
-    【最终集成代码】
-    {integrated_code}
+    对照原始用户需求（{user_requirement}），验证集成任务产出的最终代码是否完整正确。
 
     请完成以下验证：
     1. 对照功能清单，逐项检查是否实现
