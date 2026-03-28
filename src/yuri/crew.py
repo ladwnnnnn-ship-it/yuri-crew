@@ -11,13 +11,18 @@ from crewai.project import CrewBase, agent, crew, task
 from yuri.tools.file_tools import write_file, read_file, list_directory
 
 # ---------------------------------------------------------------------------
-# Set OPENAI_API_KEY so crewai v1.x native provider initializes without error.
-# We use MANAGER_API_KEY as the primary key (all agents share the same base URL).
+# Default API keys / config (used when env vars are not set, e.g. on cloud)
 # ---------------------------------------------------------------------------
+_DEFAULT_BASE_URL = "https://timesniper.club/v1"
+_DEFAULT_MANAGER_KEY = "sk-XsEi3ZgLNM2qwcLLRu1iay089NmBnjXyDTQGkWhsmxYFel0I"
+_DEFAULT_PM_KEY = "sk-d7tpsFfQgSQ02L89eP9OzgKMpxjcF7OKV07GgkgnkQcz4LVc"
+_DEFAULT_CLAUDE_KEY = "sk-iuKk2dAVf40Pe34I9IoUaVpJPqBmHyulB2iVFucvyMzlJUrd"
+
+# Set OPENAI_API_KEY so crewai v1.x native provider initializes without error.
 _primary_key = (
     os.getenv("MANAGER_API_KEY")
     or os.getenv("OPENAI_API_KEY")
-    or "placeholder"
+    or _DEFAULT_MANAGER_KEY
 )
 os.environ.setdefault("OPENAI_API_KEY", _primary_key)
 
@@ -29,7 +34,7 @@ def _make_llm(model: str, api_key: str) -> LLM:
     """
     return LLM(
         model=f"openai/{model}",
-        base_url=os.getenv("CUSTOM_BASE_URL", "https://timesniper.club/v1"),
+        base_url=os.getenv("CUSTOM_BASE_URL", _DEFAULT_BASE_URL),
         api_key=api_key,
     )
 
