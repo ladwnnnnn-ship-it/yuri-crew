@@ -162,7 +162,6 @@ class SoftwareDevCrew:
         """Requirements analysis: convert user needs into tech spec document."""
         return Task(
             config=self.tasks_config["requirements_analysis_task"],
-            output_file="output/01_tech_spec.md",
         )
 
     @task
@@ -171,7 +170,6 @@ class SoftwareDevCrew:
         return Task(
             config=self.tasks_config["frontend_dev_task"],
             context=[self.requirements_analysis_task()],
-            output_file="output/02_frontend_code.md",
         )
 
     @task
@@ -180,7 +178,6 @@ class SoftwareDevCrew:
         return Task(
             config=self.tasks_config["backend_dev_task"],
             context=[self.requirements_analysis_task()],
-            output_file="output/03_backend_code.md",
         )
 
     @task
@@ -189,7 +186,6 @@ class SoftwareDevCrew:
         return Task(
             config=self.tasks_config["integration_task"],
             context=[self.frontend_dev_task(), self.backend_dev_task()],
-            output_file="output/04_integration_report.md",
         )
 
     @task
@@ -198,7 +194,6 @@ class SoftwareDevCrew:
         return Task(
             config=self.tasks_config["qa_validation_task"],
             context=[self.integration_task()],
-            output_file="output/05_qa_report.md",
         )
 
     # ─────────────────────────────────────────────
@@ -219,5 +214,4 @@ class SoftwareDevCrew:
             verbose=True,
             planning=False,
             memory=False,
-            output_log_file="output/crew_execution.log",
         )
