@@ -30,12 +30,13 @@ os.environ.setdefault("OPENAI_API_KEY", _primary_key)
 def _make_llm(model: str, api_key: str) -> LLM:
     """
     Create an LLM instance using the shared BASE_URL and specified API Key.
-    Uses 'openai/' prefix so litellm routes via the OpenAI-compatible endpoint.
     """
     return LLM(
         model=model,
         base_url=os.getenv("CUSTOM_BASE_URL", _DEFAULT_BASE_URL),
         api_key=api_key,
+        timeout=300,
+        max_retries=3,
     )
 
 
