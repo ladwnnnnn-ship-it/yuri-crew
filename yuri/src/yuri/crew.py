@@ -40,10 +40,9 @@ def _make_llm(model: str, api_key: str, use_claude: bool = False) -> LLM:
     """
     if use_claude:
         base_url = os.getenv("CLAUDE_BASE_URL", _DEFAULT_CLAUDE_BASE_URL)
-        model_name = f"openai/{model}"
     else:
         base_url = os.getenv("GPT_BASE_URL", _DEFAULT_GPT_BASE_URL)
-        model_name = f"openai/{model}"
+    model_name = model
     return LLM(
         model=model_name,
         base_url=base_url,
