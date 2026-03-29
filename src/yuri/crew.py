@@ -13,7 +13,7 @@ from yuri.tools.file_tools import write_file, read_file, list_directory
 # ---------------------------------------------------------------------------
 # Default API keys / config (used when env vars are not set, e.g. on cloud)
 # ---------------------------------------------------------------------------
-_DEFAULT_BASE_URL = "https://timesniper.club/v1"
+_DEFAULT_BASE_URL = "https://flash.timesniper.club/V1"
 _DEFAULT_MANAGER_KEY = "sk-XsEi3ZgLNM2qwcLLRu1iay089NmBnjXyDTQGkWhsmxYFel0I"
 _DEFAULT_PM_KEY = "sk-d7tpsFfQgSQ02L89eP9OzgKMpxjcF7OKV07GgkgnkQcz4LVc"
 _DEFAULT_CLAUDE_KEY = "sk-iuKk2dAVf40Pe34I9IoUaVpJPqBmHyulB2iVFucvyMzlJUrd"
