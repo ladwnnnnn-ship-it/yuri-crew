@@ -93,27 +93,27 @@ class SoftwareDevCrew:
     def frontend_llm(self) -> LLM:
         """Frontend Agent LLM"""
         return _make_llm(
-            model=os.getenv("FRONTEND_MODEL", "gpt-5.4"),
+            model=os.getenv("FRONTEND_MODEL", "claude-sonnet-4-6"),
             api_key=os.getenv("FRONTEND_API_KEY", _DEFAULT_FRONTEND_KEY),
-            use_claude=False,
+            use_claude=True,
         )
 
     @property
     def backend_llm(self) -> LLM:
         """Backend Agent LLM"""
         return _make_llm(
-            model=os.getenv("BACKEND_MODEL", "gpt-5.4"),
+            model=os.getenv("BACKEND_MODEL", "claude-sonnet-4-6"),
             api_key=os.getenv("BACKEND_API_KEY", _DEFAULT_BACKEND_KEY),
-            use_claude=False,
+            use_claude=True,
         )
 
     @property
     def integration_llm(self) -> LLM:
         """Integration Agent LLM"""
         return _make_llm(
-            model=os.getenv("INTEGRATION_MODEL", "gpt-5.4"),
+            model=os.getenv("INTEGRATION_MODEL", "claude-sonnet-4-6"),
             api_key=os.getenv("INTEGRATION_API_KEY", _DEFAULT_INTEGRATION_KEY),
-            use_claude=False,
+            use_claude=True,
         )
 
     @property
