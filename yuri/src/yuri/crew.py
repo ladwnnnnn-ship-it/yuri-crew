@@ -48,7 +48,7 @@ def _make_llm(model: str, api_key: str, use_claude: bool = False) -> LLM:
         model=model_name,
         base_url=base_url,
         api_key=api_key,
-        stream=True,
+        stream=False,
     )
 
 
